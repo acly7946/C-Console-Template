@@ -1,15 +1,17 @@
-# Template
-Template
+# C-Console-Template
+A template repo for console programs written in C.
 
-## Compiling
+## Installation
 
-You will need:
-* C compiler
-* meson
-* ninja
-* scdoc
+Dependencies:
+* C compiler \*
+* meson \*
+* ninja \*
+* scdoc (optional: man pages)\*
 
-Compile:
+_\* Compile-time dep_
+
+Compilation:
 ```
 git clone ""
 cd directory
