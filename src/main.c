@@ -4,7 +4,7 @@
 
 #define PROGRAM "a.out"
 #define VERSION "0.0.0"
-#define AUTHOR "acly7946"
+#define AUTHOR "AUTHOR"
 
 static void usage(void);
 
