@@ -53,5 +53,6 @@ summary({
 executable(
 	'a.out',
 	'src/main.c',
-	#dependencies:
+	#dependencies:,
+	install: true
 )
