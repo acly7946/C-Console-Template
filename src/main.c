@@ -5,8 +5,10 @@
 #define PROGRAM "a.out"
 #define VERSION "0.0.0"
 #define AUTHOR "AUTHOR"
+#define LICENSE "MIT"
 
 static void usage(void);
+static void version(void);
 
 int main(int argc, char *argv[])
 {
@@ -22,8 +24,7 @@ int main(int argc, char *argv[])
 		switch(optc)
 		{
 			case 'V':
-				printf("%s, %s, %s\n", PROGRAM, VERSION, AUTHOR);
-				exit(EXIT_SUCCESS);
+				version();
 
 			default:
 				usage();
@@ -42,4 +43,14 @@ static void usage(void)
 	"  -V, --version  Print version number and immediately quit\n"
 	, PROGRAM);
 	exit(EXIT_FAILURE);
+}
+
+static void version(void)
+{
+	printf(
+	"%s %s\n"
+	"Copyright (c) 2022 %s\n"
+	"%s License\n"
+	, PROGRAM, VERSION, AUTHOR, LICENSE);
+	exit(EXIT_SUCCESS);
 }
