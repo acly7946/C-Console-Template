@@ -18,5 +18,5 @@ cd directory/
 meson build/
 ninja -C build/
 sudo ninja -C build/ install # To install
-sudo ninja -C build/ uninstall # To install
+sudo ninja -C build/ uninstall # To uninstall
 ```
