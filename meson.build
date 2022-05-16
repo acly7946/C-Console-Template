@@ -60,7 +60,7 @@ endif
 
 if get_option('fish-completions')
 	fish_files = files(
-		'completions/fish/a.out.fish',
+		'completions/fish/TEMPLATE.fish',
 	)
 
 	if fish_comp.found()
@@ -80,7 +80,7 @@ summary({
 }, bool_yn: true)
 
 executable(
-	'a.out',
+	'TEMPLATE',
 	'src/main.c',
 	#dependencies:,
 	install: true

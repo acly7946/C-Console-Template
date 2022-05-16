@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define PROGRAM "a.out"
+#define PROGRAM "TEMPLATE"
 #define VERSION "0.0.0"
 #define AUTHOR "AUTHOR"
 #define LICENSE "MIT"
