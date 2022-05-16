@@ -20,6 +20,7 @@ add_project_arguments(
 	language: 'c'
 )
 
+fish_comp = dependency('fish', required: false)
 scdoc = dependency('scdoc', native: true, required: get_option('man-pages'))
 
 datadir = get_option('datadir')
@@ -55,6 +56,23 @@ if scdoc.found()
 			install_dir: '@0@/man@1@'.format(mandir, section)
 		)
 	endforeach
+endif
+
+if get_option('fish-completions')
+	fish_files = files(
+		'completions/fish/a.out.fish',
+	)
+
+	if fish_comp.found()
+		fish_install_dir = fish_comp.get_variable(
+			pkgconfig: 'completionsdir',
+			pkgconfig_define: ['datadir', datadir]
+		)
+	else
+		fish_install_dir = join_paths(datadir, 'fish', 'vendor_completions.d')
+	endif
+
+	install_data(fish_files, install_dir: fish_install_dir)
 endif
 
 summary({
