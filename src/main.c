@@ -51,6 +51,6 @@ static void version(void)
 	"%s %s\n"
 	"Copyright (c) %s %s\n"
 	"%s License\n"
-	, PROGRAM, __DATE__ + 7, VERSION, AUTHOR, LICENSE);
+	, PROGRAM, &__DATE__[7], VERSION, AUTHOR, LICENSE);
 	exit(EXIT_SUCCESS);
 }
