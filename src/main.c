@@ -39,8 +39,8 @@ static void usage(void)
 	fprintf(stderr,
 	"Usage: %s [-hV]\n"
 	"\n"
-	"  -h, --help	 Print this help message and immediately quit\n"
-	"  -V, --version  Print version number and immediately quit\n"
+	"  -h, --help	 Show help message and quit\n"
+	"  -V, --version  Show version number and quit\n"
 	, PROGRAM);
 	exit(EXIT_FAILURE);
 }
