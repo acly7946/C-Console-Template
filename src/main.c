@@ -49,8 +49,8 @@ static void version(void)
 {
 	printf(
 	"%s %s\n"
-	"Copyright (c) 2022 %s\n"
+	"Copyright (c) %s %s\n"
 	"%s License\n"
-	, PROGRAM, VERSION, AUTHOR, LICENSE);
+	, PROGRAM, __DATE__ + 7, VERSION, AUTHOR, LICENSE);
 	exit(EXIT_SUCCESS);
 }
