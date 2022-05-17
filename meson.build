@@ -20,6 +20,7 @@ add_project_arguments(
 	language: 'c'
 )
 
+bash_comp = dependency('bash-completion', required: false)
 fish_comp = dependency('fish', required: false)
 scdoc = dependency('scdoc', native: true, required: get_option('man-pages'))
 
@@ -58,6 +59,7 @@ if scdoc.found()
 	endforeach
 endif
 
+# Install fish completions
 if get_option('fish-completions')
 	fish_files = files(
 		'completions/fish/TEMPLATE.fish',
@@ -73,6 +75,24 @@ if get_option('fish-completions')
 	endif
 
 	install_data(fish_files, install_dir: fish_install_dir)
+endif
+
+# Install bash completions
+if get_option('bash-completions')
+	bash_files = files(
+		'completions/bash/TEMPLATE.bash',
+	)
+
+	if bash_comp.found()
+		bash_install_dir = bash_comp.get_variable(
+			pkgconfig: 'completionsdir',
+			pkgconfig_define: ['datadir', datadir]
+		)
+	else
+		bash_install_dir = join_paths(datadir, 'bash-completion', 'completions')
+	endif
+
+	install_data(bash_files, install_dir: bash_install_dir)
 endif
 
 summary({
