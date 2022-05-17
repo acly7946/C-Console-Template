@@ -95,6 +95,15 @@ if get_option('bash-completions')
 	install_data(bash_files, install_dir: bash_install_dir)
 endif
 
+if get_option('zsh-completions')
+	zsh_files = files(
+		'completions/zsh/_TEMPLATE',
+	)
+	zsh_install_dir = join_paths(datadir, 'zsh', 'site-functions')
+
+	install_data(zsh_files, install_dir: zsh_install_dir)
+endif
+
 summary({
 	'man-pages': scdoc.found(),
 }, bool_yn: true)
