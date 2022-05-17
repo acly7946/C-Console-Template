@@ -10,7 +10,7 @@ TEMPLATE - TEMPLATE TEMPLATE
 # OPTIONS
 
 *-h, --help*
-	Show help message and quit.
+	Show help message and quit
 
 *-V, --version*
-	Show version and quit.
+	Show version number and quit
