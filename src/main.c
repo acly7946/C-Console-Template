@@ -7,8 +7,8 @@
 #define AUTHOR "AUTHOR"
 #define LICENSE "MIT"
 
-static void usage(void);
-static void version(void);
+static void usage(void) __attribute__((noreturn));
+static void version(void) __attribute__((noreturn));
 
 int main(int argc, char *argv[])
 {
