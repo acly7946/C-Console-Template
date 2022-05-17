@@ -59,24 +59,6 @@ if scdoc.found()
 	endforeach
 endif
 
-# Install fish completions
-if get_option('fish-completions')
-	fish_files = files(
-		'completions/fish/TEMPLATE.fish',
-	)
-
-	if fish_comp.found()
-		fish_install_dir = fish_comp.get_variable(
-			pkgconfig: 'completionsdir',
-			pkgconfig_define: ['datadir', datadir]
-		)
-	else
-		fish_install_dir = join_paths(datadir, 'fish', 'vendor_completions.d')
-	endif
-
-	install_data(fish_files, install_dir: fish_install_dir)
-endif
-
 # Install bash completions
 if get_option('bash-completions')
 	bash_files = files(
@@ -93,6 +75,24 @@ if get_option('bash-completions')
 	endif
 
 	install_data(bash_files, install_dir: bash_install_dir)
+endif
+
+# Install fish completions
+if get_option('fish-completions')
+	fish_files = files(
+		'completions/fish/TEMPLATE.fish',
+	)
+
+	if fish_comp.found()
+		fish_install_dir = fish_comp.get_variable(
+			pkgconfig: 'completionsdir',
+			pkgconfig_define: ['datadir', datadir]
+		)
+	else
+		fish_install_dir = join_paths(datadir, 'fish', 'vendor_completions.d')
+	endif
+
+	install_data(fish_files, install_dir: fish_install_dir)
 endif
 
 # Install zsh completions
