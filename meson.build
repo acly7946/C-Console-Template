@@ -95,6 +95,7 @@ if get_option('bash-completions')
 	install_data(bash_files, install_dir: bash_install_dir)
 endif
 
+# Install zsh completions
 if get_option('zsh-completions')
 	zsh_files = files(
 		'completions/zsh/_TEMPLATE',
