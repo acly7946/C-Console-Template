@@ -21,6 +21,7 @@ add_project_arguments(
 datadir = get_option('datadir')
 sysconfdir = get_option('sysconfdir')
 prefix = get_option('prefix')
+incdir = include_directories('include')
 
 config = configuration_data()
 config.set('datadir', join_paths(prefix, datadir))
