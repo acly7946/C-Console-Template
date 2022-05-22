@@ -39,10 +39,4 @@ summary({
 
 subdir('completion')
 subdir('man')
-
-executable(
-	'TEMPLATE',
-	'src/main.c',
-	#dependencies:,
-	install: true
-)
+subdir('src')
