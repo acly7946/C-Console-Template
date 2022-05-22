@@ -37,7 +37,7 @@ summary({
 	'man-pages': get_option('man-pages'),
 }, bool_yn: true)
 
-subdir('completions')
+subdir('completion')
 subdir('man')
 
 executable(
