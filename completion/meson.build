@@ -1,5 +1,5 @@
-bash_comp = dependency('bash-completion', required: get_option('bash-completions'))
-fish_comp = dependency('fish', required: get_option('fish-completions'))
+bash_comp = dependency('bash-completion', required: false)
+fish_comp = dependency('fish', required: false)
 
 # Install bash completions
 if get_option('bash-completions')
