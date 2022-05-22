@@ -5,7 +5,8 @@ project(
 	license: 'MIT',
 	default_options:
 	[
-		'c_std=c11'
+		'c_std=c11',
+		'warning_level=3'
 	]
 )
 
@@ -22,7 +23,6 @@ add_project_arguments(
 
 bash_comp = dependency('bash-completion', required: false)
 fish_comp = dependency('fish', required: false)
-scdoc = dependency('scdoc', native: true, required: get_option('man-pages'))
 
 datadir = get_option('datadir')
 sysconfdir = get_option('sysconfdir')
@@ -33,31 +33,6 @@ config.set('datadir', join_paths(prefix, datadir))
 config.set('prefix', prefix)
 config.set('sysconfdir', join_paths(prefix, sysconfdir))
 
-# Compile man pages
-if scdoc.found()
-	scdoc_prog = find_program(scdoc.get_variable(pkgconfig: 'scdoc'), native: true)
-	mandir = get_option('mandir')
-	man_files = [
-		'man/TEMPLATE.1.scd',
-	]
-
-	foreach filename : man_files
-		topic = filename.split('.')[-3].split('/')[-1]
-		section = filename.split('.')[-2]
-		output = '@0@.@1@'.format(topic, section)
-
-		custom_target(
-			output,
-			input: filename,
-			output: output,
-			command: scdoc_prog,
-			install: true,
-			feed: true,
-			capture: true,
-			install_dir: '@0@/man@1@'.format(mandir, section)
-		)
-	endforeach
-endif
 
 # Install bash completions
 if get_option('bash-completions')
@@ -106,8 +81,10 @@ if get_option('zsh-completions')
 endif
 
 summary({
-	'man-pages': scdoc.found(),
+	'man-pages': get_option('man-pages'),
 }, bool_yn: true)
+
+subdir('man')
 
 executable(
 	'TEMPLATE',
