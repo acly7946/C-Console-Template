@@ -36,5 +36,5 @@ summary({
 }, bool_yn: true)
 
 subdir('completion')
-subdir('man')
+subdir('doc')
 subdir('src')
