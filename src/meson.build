@@ -21,4 +21,4 @@ if valgrind.found()
 	)
 endif
 
-test('valgrind', TEMPLATE, suite: ['valgrind'])
+test('valgrind', TEMPLATE, suite: 'valgrind')
