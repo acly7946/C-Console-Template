@@ -6,19 +6,17 @@ TEMPLATE = executable(
 	install: true
 )
 
-valgrind = find_program('valgrind', required: false)
-if valgrind.found()
-	add_test_setup('valgrind',
-		exe_wrapper:
-		[
-			valgrind,
-			'--leak-check=full',
-			'--gen-suppressions=all',
-			'--error-exitcode=3',
-		],
-		timeout_multiplier: 100,
-		is_default: true,
-	)
-endif
+valgrind = find_program('valgrind', required: false, disabler: true)
+add_test_setup('valgrind',
+	exe_wrapper:
+	[
+		valgrind,
+		'--leak-check=full',
+		'--gen-suppressions=all',
+		'--error-exitcode=3',
+	],
+	timeout_multiplier: 100,
+	is_default: true,
+)
 
-test('valgrind', TEMPLATE, suite: 'valgrind')
+test('Valgrind Leak Check', TEMPLATE, suite: 'valgrind')
