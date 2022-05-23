@@ -23,11 +23,6 @@ sysconfdir = get_option('sysconfdir')
 prefix = get_option('prefix')
 incdir = include_directories('include')
 
-config = configuration_data()
-config.set('datadir', join_paths(prefix, datadir))
-config.set('prefix', prefix)
-config.set('sysconfdir', join_paths(prefix, sysconfdir))
-
 summary({
 	'bash-completions': get_option('bash-completions'),
 	'fish-completions': get_option('fish-completions'),
