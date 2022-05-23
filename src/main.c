@@ -37,20 +37,19 @@ int main(int argc, char *argv[])
 static void usage(void)
 {
 	fprintf(stderr,
-	"Usage: %s [-hV]\n"
-	"\n"
-	"  -h, --help	 Show help message and quit\n"
-	"  -V, --version  Show version number and quit\n"
-	, PROGRAM);
+			"Usage: %s [-hV]\n"
+			"\n"
+			"  -h, --help	 Show help message and quit\n"
+			"  -V, --version  Show version number and quit\n",
+			PROGRAM);
 	exit(EXIT_FAILURE);
 }
 
 static void version(void)
 {
-	printf(
-	"%s %s\n"
-	"Copyright (c) %s %s\n"
-	"%s License\n"
-	, PROGRAM, VERSION, &__DATE__[7], AUTHOR, LICENSE);
+	printf("%s %s\n"
+		   "Copyright (c) %s %s\n"
+		   "%s License\n",
+		   PROGRAM, VERSION, &__DATE__[7], AUTHOR, LICENSE);
 	exit(EXIT_SUCCESS);
 }
