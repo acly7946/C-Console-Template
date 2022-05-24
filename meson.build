@@ -15,6 +15,9 @@ add_project_arguments(
 	[
 		'-Wundef',
 		'-Wvla',
+		'-DNAME="@0@"'.format(meson.project_name()),
+		'-DVERSION="@0@"'.format(meson.project_version()),
+		'-DLICENSE="@0@"'.format(meson.project_license()[0]),
 	],
 	language: 'c'
 )
