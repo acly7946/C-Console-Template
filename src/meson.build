@@ -11,12 +11,13 @@ add_test_setup('valgrind',
 	exe_wrapper:
 	[
 		valgrind,
+		'--tool=memcheck',
 		'--leak-check=full',
 		'--gen-suppressions=all',
-		'--error-exitcode=3',
+		'--error-exitcode=1',
 	],
-	timeout_multiplier: 100,
+	timeout_multiplier: 10,
 	is_default: true,
 )
 
-test('Valgrind Leak Check', TEMPLATE, suite: 'valgrind')
+test('Valgrind memcheck', TEMPLATE, suite: 'valgrind')
