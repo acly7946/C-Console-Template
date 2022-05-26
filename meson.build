@@ -37,3 +37,4 @@ summary({
 subdir('completion')
 subdir('doc')
 subdir('src')
+subdir('test')
