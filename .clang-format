@@ -3,23 +3,45 @@ BasedOnStyle: Microsoft
 AlignConsecutiveMacros: 'false'
 AlignConsecutiveAssignments: 'false'
 AlignConsecutiveDeclarations: 'false'
+AlignTrailingComments: 'false'
+AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: 'false'
-AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: 'false'
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
 BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: 'true'
+  AfterControlStatement: Always
+  AfterEnum: 'true'
+  AfterFunction: 'true'
+  AfterStruct: 'true'
+  BeforeElse: 'true'
+  BeforeWhile: 'false'
+  SplitEmptyFunction: 'true'
+BreakStringLiterals: 'true'
 ColumnLimit: '100'
 IncludeBlocks: Merge
+IndentCaseBlocks: 'false'
 IndentCaseLabels: 'true'
+IndentGotoLabels: 'true'
+IndentPPDirectives: BeforeHash
 IndentWidth: '4'
+KeepEmptyLinesAtTheStartOfBlocks: 'false'
 Language: Cpp
 MaxEmptyLinesToKeep: '2'
 PointerAlignment: Right
-SortIncludes: 'true'
+PPIndentWidth: '4'
+ReferenceAlignment: Right
+SortIncludes: CaseInsensitive
 SpaceAfterCStyleCast: 'false'
+SpaceAfterLogicalNot: 'false'
+SpaceBeforeAssignmentOperators: 'true'
+SpaceBeforeCaseColon: 'false'
 SpaceBeforeParens: Never
+SpaceBeforeSquareBrackets: 'false'
+SpacesBeforeTrailingComments: '1'
+SpacesInConditionalStatement: 'false'
+SpaceInEmptyBlock: 'false'
 SpaceInEmptyParentheses: 'false'
 SpacesInCStyleCastParentheses: 'false'
 SpacesInParentheses: 'false'
