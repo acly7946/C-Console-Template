@@ -3,7 +3,7 @@
 _TEMPLATE()
 {
 	local cur short long
-	_get_comp_words_by_ref cur prev
+	_get_comp_words_by_ref cur
 
 	short=(
 		-h
