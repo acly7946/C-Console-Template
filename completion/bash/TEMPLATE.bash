@@ -2,7 +2,7 @@
 
 _TEMPLATE()
 {
-	local cur prev short long
+	local cur short long
 	_get_comp_words_by_ref cur prev
 
 	short=(
@@ -14,13 +14,6 @@ _TEMPLATE()
 		--help
 		--version
 	)
-
-	case $prev in
-		-c|--config)
-			_filedir
-			return
-			;;
-	esac
 
 	if [[ $cur == --* ]]; then
 		COMPREPLY=($(compgen -W "${long[*]}" -- "$cur"))
