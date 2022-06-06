@@ -9,8 +9,8 @@ TEMPLATE - TEMPLATE TEMPLATE
 
 # OPTIONS
 
-*-h, --help*
+*-h*, *--help*
 	Show help message and quit
 
-*-V, --version*
+*-V*, *--version*
 	Show version number and quit
